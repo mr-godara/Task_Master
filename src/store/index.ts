@@ -8,7 +8,7 @@ export const store = configureStore({
     todos: todosReducer,
   },
   // Enable Redux DevTools extension
-  devTools: process.env.NODE_ENV !== 'production',
+  devTools: true,
 });
 
 export type RootState = ReturnType<typeof store.getState>;

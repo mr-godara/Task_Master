@@ -11,13 +11,11 @@ import {
   CardContent,
   Divider,
   Alert,
-  CircularProgress,
-  IconButton,
-  Tooltip
+  CircularProgress
 } from '@mui/material';
 import SortIcon from '@mui/icons-material/Sort';
 import { useAppSelector } from '../hooks/useAppSelector';
-import { Todo, Priority } from '../types';
+import { Priority } from '../types';
 import TaskItem from './TaskItem';
 
 // Filter types

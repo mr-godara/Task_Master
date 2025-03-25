@@ -39,9 +39,11 @@ export const getWeatherByLocation = async (location: string): Promise<WeatherDat
 
 // For development/demo purposes - return mock data if API key not available
 export const getMockWeather = (location: string): WeatherData => {
+  // Generate different values based on location string for consistent results
+  const locationSeed = location.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
   const conditions = ['Sunny', 'Cloudy', 'Rainy', 'Stormy', 'Windy', 'Snowy'];
-  const randomCondition = conditions[Math.floor(Math.random() * conditions.length)];
-  const randomTemp = Math.floor(Math.random() * 30) + 1;
+  const randomCondition = conditions[locationSeed % conditions.length];
+  const randomTemp = (locationSeed % 30) + 1;
   
   return {
     temperature: randomTemp,

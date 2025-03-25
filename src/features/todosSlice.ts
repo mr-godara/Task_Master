@@ -111,7 +111,7 @@ const todosSlice = createSlice({
         state.error = action.error.message || 'Failed to add todo';
       })
       // Update Todo Weather
-      .addCase(updateTodoWeather.fulfilled, (state, action: PayloadAction<Todo>) => {
+      .addCase(updateTodoWeather.fulfilled, (state, action) => {
         const index = state.todos.findIndex(todo => todo.id === action.payload.id);
         if (index !== -1) {
           state.todos[index] = action.payload;

@@ -57,7 +57,7 @@ export const updateTodoWeather = createAsyncThunk(
       const weatherData = await getWeatherByLocation(todo.location)
         .catch(() => getMockWeather(todo.location!));
       
-      return { ...todo, weather: weatherData };
+      return { ...todo, weather: weatherData || undefined };
     } catch (error) {
       if (error instanceof Error) {
         throw error;
